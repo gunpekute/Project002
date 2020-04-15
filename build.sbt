@@ -4,15 +4,15 @@ version := "0.1"
 
 scalaVersion := "2.13.1"
 
-val springBootVersion = "1.3.2.RELEASE"
-
 libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "2.9.0"
 
 libraryDependencies ++= Seq(
-  "org.springframework.boot" % "spring-boot-starter-web" % "1.5.4.RELEASE"
-)
-libraryDependencies ++= Seq(
-  "org.apache.tomcat.embed" % "tomcat-embed-core"         % "7.0.53" % "container",
-  "org.apache.tomcat.embed" % "tomcat-embed-logging-juli" % "7.0.53" % "container",
-  "org.apache.tomcat.embed" % "tomcat-embed-jasper"       % "7.0.53" % "container"
+  "org.springframework.boot" % "spring-boot-starter-web" % "1.5.4.RELEASE",
+  "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115" % "container, compile",
+  "org.eclipse.jetty" % "jetty-jsp" % "9.1.0.v20131115" % "container",
+  "org.springframework" % "spring-webmvc" % "4.0.6.RELEASE",
+  "org.springframework" % "spring-context" % "4.0.6.RELEASE",
+  "org.springframework" % "spring-context-support" % "4.0.6.RELEASE",
+  "javax.servlet" % "javax.servlet-api" % "3.0.1" % "provided",
+  "javax.servlet" % "jstl" % "1.2" % "compile"
 )

@@ -6,6 +6,7 @@ import java.util.{Calendar, Date}
 import java.text.SimpleDateFormat
 import java.time.{LocalDate, LocalTime}
 import java.util
+import org.springframework.ui.Model
 
 import com.mongodb.BasicDBObject
 import org.mongodb.scala._
@@ -21,22 +22,8 @@ import scala.concurrent.duration.Duration
 class TestCtrl {
   @GetMapping(Array("/login"))
   @ResponseBody
-  def demo={
-    "<html>" +
-      "<body>" +
-      "<h1>Log in</h1>" +
-        "<form action=\"save\">" +
-          "<label>Username:</label> <br>" +
-            "<input type=\"text\" id=\"username\" name=\"username\"> <br>" +
-          "<label>Password:</label> <br>" +
-            "<input type=\"text\" id=\"password\" name=\"password\"> <br>" +
-          "<input type=\"submit\" value=\"Submit\"> <br>" +
-        "</form>"+
-      "<form action=\"register\">" +
-      "<input type=\"submit\" value=\"Register\">" +
-      "</form>"+
-      "</body>" +
-    "</html>"
+  def demo()={
+    "login"
   }
 
   @GetMapping(Array("/save"))

@@ -1,3 +1,3 @@
-[debug] "not up to date. inChanged = true, force = false
+[debug] "not up to date. inChanged = false, force = false
 [debug] Updating ProjectRef(uri("file:/C:/Users/Gihot/IdeaProjects/untitled1/project/"), "untitled1-build")...
 [debug] Done updating ProjectRef(uri("file:/C:/Users/Gihot/IdeaProjects/untitled1/project/"), "untitled1-build")
