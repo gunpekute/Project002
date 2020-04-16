@@ -19,14 +19,12 @@ class DbsExecute {
 
   def checkLogin(username: String, password: String) = {
     val result = nodes.find(and(equal("username", username),equal("password", password))).first()
-    Thread.sleep(1)
     val res = Await.result(result.toFuture(), waitDuration)
     res
   }
 
   def loginDay(username: String, loginDay: LocalDate) = {
     nodes.findOneAndUpdate(equal("username", username),Updates.set("loginDay", loginDay)).printHeadResult()
-    Thread.sleep(1)
   }
 
   def updateInfor(username: String, password: String, fullname: String, birthday: String, sex: String, phonenumber: String ) = {
@@ -35,12 +33,10 @@ class DbsExecute {
     nodes.findOneAndUpdate(equal("username", username),Updates.set("birthday", birthday)).printHeadResult()
     nodes.findOneAndUpdate(equal("username", username),Updates.set("sex", sex)).printHeadResult()
     nodes.findOneAndUpdate(equal("username", username),Updates.set("phonenumber", phonenumber)).printHeadResult()
-    Thread.sleep(1)
   }
 
   def checkExist(username: String) = {
     val result = nodes.find(equal("username", username)).first()
-    Thread.sleep(1)
     val res = Await.result(result.toFuture(), waitDuration)
     res
   }
@@ -54,12 +50,10 @@ class DbsExecute {
     )
     val result = nodes.insertOne(doc).results()
     nodes.findOneAndUpdate(equal("username", username),Updates.set("registerDay", now)).printHeadResult()
-    Thread.sleep(1)
   }
 
   def listUser() = {
     val result = nodes.find(equal("admin", false))
-    Thread.sleep(1)
     val res = Await.result(result.toFuture(), waitDuration)
     res
   }
@@ -70,7 +64,6 @@ class DbsExecute {
     activeUser.foreach(user => {
       nodes.updateOne(equal("username", user),Updates.set("active", true)).printResults()
     })
-    Thread.sleep(1)
   }
 
   def userLog(action: String) = {

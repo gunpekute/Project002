@@ -88,7 +88,7 @@ class TestCtrl {
                     @RequestParam("sex") sex : String,
                     @RequestParam("phonenumber") phonenumber : String):String ={
     val emailFormat = "[a-zA-Z][a-zA-Z0-9_]*@[a-zA-Z0-9](.[a-zA-Z0-9]*)*"
-    val passFormat = "[a-zA-Z0-9]*"
+    val passFormat = "[a-zA-Z0-9]+"
     val phoneNumberFormat = "[0-9]{9,11}"
 
     model.addAttribute("username",username)
@@ -100,7 +100,7 @@ class TestCtrl {
     if (username.matches(emailFormat) == false ||
         phonenumber.matches(phoneNumberFormat) == false ||
       password.matches(passFormat) == false) {
-      model.addAttribute("error","Wrong email, passwork or phone format")
+      model.addAttribute("error","Format of email, password or phone is not correct or blank")
       "register"
     }
     else {
