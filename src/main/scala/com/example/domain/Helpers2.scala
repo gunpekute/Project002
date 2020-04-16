@@ -1,4 +1,4 @@
-package com.example.app.controller
+package com.example.domain
 
 import java.util.concurrent.TimeUnit
 

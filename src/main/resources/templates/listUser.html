@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+    <h1>List user</h1>
+    <form action="activeuser">
+        <table style="width:30%">
+            <tr><th>Username</th><th>Active</th></tr>
+            <tr th:each="user : ${requireList}">
+                <td th:text="${user.username}"></td>
+                <td><input type="checkbox" name="active" th:value="${user.username}" th:checked="${user.active}" /></td>
+            </tr>
+        <input type="submit" value="Save"/>
+        </table>
+    </form>
+
+</body>
+</html>

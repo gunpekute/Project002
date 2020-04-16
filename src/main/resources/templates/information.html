@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+    <h1>Information</h1>
+    <form action="update">
+        <div><label>Username:</label></div>
+        <input type="text" id="username" name="username" th:value="${username}" readonly="readonly"/>
+        <div><label>Password:</label>
+            <input type="text" id="password" name="password" th:value="${password}" /></div>
+        <div><label>Full name:</label>
+            <input type="text" id="fullname" name="fullname" th:value="${fullname}" /></div>
+        <div><label>Birthday:</label>
+            <input type="date" id="birthday" name="birthday" th:value="${birthday}"/></div>
+        <div><label>Sex:</label>
+            <span th:if="${sex != 'female'}">
+                <input type="radio" id="male" name="sex" value="male" checked="checked"/> Male
+                <input type="radio" id="female" name="sex" value="female" /> Female
+            </span>
+            <span th:if="${sex == 'female'}">
+                <input type="radio" id="male2" name="sex" value="male"/> Male
+                <input type="radio" id="female2" name="sex" value="female" checked="checked"/> Female
+            </span>
+
+        </div>
+        <label>Phone number:</label>
+        <input type="text" id="phonenumber" name="phonenumber" th:value="${phonenumber}" />
+        <input type="submit" value="Update"/>
+        </form>
+    </body>
+</html>

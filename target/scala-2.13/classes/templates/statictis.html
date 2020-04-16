@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+    <h1>List user login today</h1>
+    <ul th:each="login : ${loginArr}">
+        <li th:text="${login}"></li>
+    </ul>
+    <h1>List user register today</h1>
+    <ul th:each="register : ${registerArr}">
+        <li th:text="${register}"></li>
+    </ul>
+</body>
+</html>

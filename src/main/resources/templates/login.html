@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+    <h1>Log in</h1>
+    <form action="save">
+        <div><label>Username:</label></div>
+        <div><input type="text" id="username" name="username"/></div>
+        <div><label>Password:</label></div>
+        <div><input type="text" id="password" name="password"/></div>
+        <div><input type="submit" value="Login"/></div>
+    </form>
+    <form action="register">
+        <input type="submit" value="Register"/>
+    </form>
+    <p th:text="${error}"></p>
+</body>
+</html>
