@@ -1,6 +1,6 @@
 package com.example.domain
 
-import javax.persistence.{Entity, GeneratedValue, GenerationType, Id}
+import javax.persistence.{Entity}
 
 import scala.beans.BeanProperty
 

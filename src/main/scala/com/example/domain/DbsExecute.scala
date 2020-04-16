@@ -1,12 +1,12 @@
 package com.example.domain
 
 import java.time.LocalDate
-import java.util.Date
 
 import org.mongodb.scala.{Document, MongoClient}
 import org.mongodb.scala.model.Filters.{and, equal}
 import org.mongodb.scala.model.Updates
 import Helpers2._
+import org.bson.conversions.Bson
 
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
@@ -28,11 +28,9 @@ class DbsExecute {
   }
 
   def updateInfor(username: String, password: String, fullname: String, birthday: String, sex: String, phonenumber: String ) = {
-    nodes.findOneAndUpdate(equal("username", username),Updates.set("password", password)).printHeadResult()
-    nodes.findOneAndUpdate(equal("username", username),Updates.set("fullname", fullname)).printHeadResult()
-    nodes.findOneAndUpdate(equal("username", username),Updates.set("birthday", birthday)).printHeadResult()
-    nodes.findOneAndUpdate(equal("username", username),Updates.set("sex", sex)).printHeadResult()
-    nodes.findOneAndUpdate(equal("username", username),Updates.set("phonenumber", phonenumber)).printHeadResult()
+    var lstUpdate : List[Bson] = List(Updates.set("password", password),Updates.set("fullname", fullname),
+                              Updates.set("birthday", birthday),Updates.set("sex", sex),Updates.set("phonenumber", phonenumber))
+    nodes.findOneAndUpdate(equal("username", username),lstUpdate).printHeadResult()
   }
 
   def checkExist(username: String) = {

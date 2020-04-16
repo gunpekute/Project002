@@ -1,6 +1,6 @@
 package com.example.app.controller
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.{GetMapping, ModelAttribute, RequestParam, ResponseBody}
+import org.springframework.web.bind.annotation.{GetMapping, RequestParam, ResponseBody}
 import java.util.Date
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -16,7 +16,7 @@ class TestCtrl {
   val dbs = new DbsExecute()
 
   @GetMapping(Array("/login"))
-  def demo(model: Model )={
+  def demo()={
     "login"
   }
 
